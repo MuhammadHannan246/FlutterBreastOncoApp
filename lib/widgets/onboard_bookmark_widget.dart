@@ -42,7 +42,8 @@ class OnboardBookmarkWidgetState extends State<OnboardBookmarkWidget> with Singl
       child: Container(
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          color: kPrimarySwatchColor.shade50,
+          color: kLightColor,
+          border: Border.all(color: kSecondarySwatchColor),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             bottomLeft: Radius.circular(40),
@@ -54,14 +55,14 @@ class OnboardBookmarkWidgetState extends State<OnboardBookmarkWidget> with Singl
           children: [
             SvgPicture.asset(
               'assets/images/checkmark-circle.svg',
-              colorFilter: ColorFilter.mode(kPrimarySwatchColor, BlendMode.srcATop),
+              colorFilter: ColorFilter.mode(kSecondarySwatchColor, BlendMode.srcATop),
               fit: BoxFit.contain,
             ),
             const SizedBox(width: 8),
             Text(
               widget.text,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: kSecondarySwatchColor.shade800,
+                    color: kDarkColor,
                   ),
             ),
             const SizedBox(width: 16),
