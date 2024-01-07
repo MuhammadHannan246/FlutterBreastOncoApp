@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SupportScreen extends StatelessWidget {
   const SupportScreen({Key? key}) : super(key: key);
-  static const routeName = '/goals';
+  static const routeName = '/goals-one';
 
   @override
   Widget build(BuildContext context) {

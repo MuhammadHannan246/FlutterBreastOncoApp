@@ -3,19 +3,33 @@ import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.dart';
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class OnBoardReminderSixScreen extends StatefulWidget {
   const OnBoardReminderSixScreen({super.key});
   static const routeName = '/onboard-reminder-six';
 
   @override
-  State<OnBoardReminderSixScreen> createState() => _OnBoardReminderFiveScreenState();
+  State<OnBoardReminderSixScreen> createState() => _OnBoardReminderSixScreenState();
 }
 
-class _OnBoardReminderFiveScreenState extends State<OnBoardReminderSixScreen> {
-  bool emailSwitch = true;
-  bool textSwitch = true;
-  bool pushSwitch = true;
+class _OnBoardReminderSixScreenState extends State<OnBoardReminderSixScreen> {
+  List<File> selectedImages = [];
+
+  Future<void> _pickImages() async {
+    final List<XFile>? pickedImages = await ImagePicker().pickMultiImage(
+      imageQuality: 80,
+      maxHeight: 800,
+      maxWidth: 800,
+    );
+
+    if (pickedImages != null) {
+      setState(() {
+        selectedImages = pickedImages.map((XFile file) => File(file.path)).toList();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +55,7 @@ class _OnBoardReminderFiveScreenState extends State<OnBoardReminderSixScreen> {
                         animationDuration: 2000,
                       ),
                     ),
-                    OnboardBookmarkWidget(text: 'Reminders'),
+                    OnboardBookmarkWidget(text: 'Mammo Model'),
                   ],
                 ),
                 Padding(
@@ -52,96 +66,58 @@ class _OnBoardReminderFiveScreenState extends State<OnBoardReminderSixScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                         child: Text(
-                          'How should we remind you?',
+                          'Select Mammogramme Images from Gallery',
                           style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                                color: kSecondarySwatchColor.shade700,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            color: kSecondarySwatchColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                         child: Text(
-                          'Toggle all of the methods you want us to use for your reminders.',
+                          'You can pick multiple images from your phone gallery.',
                           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                color: kTextColor,
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Switch.adaptive(
-                                    activeColor: kPrimarySwatchColor,
-                                    inactiveTrackColor: kTextColor,
-                                    value: emailSwitch,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        emailSwitch = value;
-                                      });
-                                    },
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Email notifications',
-                                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Switch.adaptive(
-                                    activeColor: kPrimarySwatchColor,
-                                    inactiveTrackColor: kTextColor,
-                                    value: textSwitch,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        textSwitch = value;
-                                      });
-                                    },
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Text messages',
-                                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Switch.adaptive(
-                                    activeColor: kPrimarySwatchColor,
-                                    inactiveTrackColor: kTextColor,
-                                    value: pushSwitch,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        pushSwitch = value;
-                                      });
-                                    },
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Push notifications ',
-                                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                            color: kTextColor,
                           ),
                         ),
                       ),
+                      // Display selected images
+                      Wrap(
+                        spacing: 8.0,
+                        runSpacing: 8.0,
+                        children: selectedImages
+                            .map(
+                              (File image) => Container(
+                                width: 80.0,
+                                height: 80.0,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: FileImage(image),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            )
+                            .toList(),
+                      ),
+                      SizedBox(height: 16),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: ElevatedButton(
+                          onPressed: _pickImages,
+                          style: Theme.of(context).elevatedButtonTheme.style,
+                          child: Text(
+                            'Pick Images',
+                            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: kLightColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                         child: Row(
@@ -151,13 +127,15 @@ class _OnBoardReminderFiveScreenState extends State<OnBoardReminderSixScreen> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                style: Theme.of(context).outlinedButtonTheme.style,
+                                style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                                  side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
+                                ),
                                 child: Text(
                                   'Back',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                        color: kPrimarySwatchColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                    color: kSecondarySwatchColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -165,15 +143,25 @@ class _OnBoardReminderFiveScreenState extends State<OnBoardReminderSixScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed(OnBoardReminderSevenScreen.routeName);
+                                 Navigator.of(context).pushNamed(
+      OnBoardReminderSevenScreen.routeName,
+      arguments: {
+        'firstName': 'John',
+        'lastName': 'Doe',
+        'age': '25',
+        'contactNumber': '1234567890',
+        'questionnaireResult': 'Positive',
+        'imageModelResult': 'Negative',
+      },
+    );
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
                                   'Next',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                        color: kLightColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                    color: kLightColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
