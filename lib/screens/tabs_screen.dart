@@ -2,7 +2,6 @@ import 'package:breast_onco/screens/account_screen.dart';
 import 'package:breast_onco/screens/courses_screen.dart';
 import 'package:breast_onco/screens/dash_screen.dart';
 import 'package:breast_onco/screens/goals_screen.dart';
-import 'package:breast_onco/screens/support_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -41,11 +40,6 @@ class _TabsScreenState extends State<TabsScreen> {
         'page': const CoursesScreen(),
         'title': 'Add New',
         'icon': Icons.add,
-      },
-      {
-        'page': const SupportScreen(),
-        'title': 'Records',
-        'icon': Icons.receipt,
       },
       {
         'page': const AccountScreen(),
@@ -99,10 +93,6 @@ class _TabsScreenState extends State<TabsScreen> {
             ),
             GButton(
               icon: pages[3]['icon'],
-              text: pages[_selectedPageIndex]['title'],
-            ),
-            GButton(
-              icon: pages[4]['icon'],
               text: pages[_selectedPageIndex]['title'],
             ),
           ],

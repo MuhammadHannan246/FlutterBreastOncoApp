@@ -50,6 +50,7 @@ class OnboardBookmarkWidgetState extends State<OnboardBookmarkWidget> with Singl
           ),
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -59,13 +60,14 @@ class OnboardBookmarkWidgetState extends State<OnboardBookmarkWidget> with Singl
               fit: BoxFit.contain,
             ),
             const SizedBox(width: 8),
-            FittedBox(
-              child: Text(
-                widget.text,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: kDarkColor,
-                    ),
-                overflow: TextOverflow.ellipsis, // or TextOverflow.fade
+            Flexible(
+              child: FittedBox(
+                child: Text(
+                  widget.text,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: kDarkColor,
+                      ),
+                ),
               ),
             ),
             const SizedBox(width: 16),

@@ -1,4 +1,3 @@
-import 'package:breast_onco/screens/onboard_reminder_six_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.dart';
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
@@ -148,7 +147,7 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed(OnBoardReminderSixScreen.routeName);
+                                  Navigator.of(context).pop();
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(

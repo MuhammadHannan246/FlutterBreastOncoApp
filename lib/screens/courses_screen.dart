@@ -140,7 +140,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil(QuestionAndAnswerScreen.routeName, (Route route) => false);
+                    Navigator.of(context).pushNamed(QuestionAndAnswerScreen.routeName);
                   },
                   style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                         backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),

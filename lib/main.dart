@@ -1,4 +1,4 @@
-import 'package:breast_onco/screens/splash_screen.dart';
+import 'package:breast_onco/screens/tabs_screen.dart';
 import 'package:breast_onco/themes/cubit/theme_cubit.dart';
 import 'package:breast_onco/themes/theme_style.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Breast Onco',
       theme: ThemeStyle.lightTheme,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: TabsScreen.routeName,
       routes: PageRoutes().routes(),
     );
   }
