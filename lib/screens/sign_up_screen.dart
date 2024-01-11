@@ -4,7 +4,6 @@ import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:breast_onco/widgets/on_board_list_tile_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

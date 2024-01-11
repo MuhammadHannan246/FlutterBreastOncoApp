@@ -1,11 +1,9 @@
 import 'package:breast_onco/constants/component.dart';
-import 'package:breast_onco/screens/multi_factor_authentication_screen.dart';
 import 'package:breast_onco/screens/sign_up_screen.dart';
 import 'package:breast_onco/screens/tabs_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -54,25 +52,20 @@ class _SignInScreenState extends State<SignInScreen> {
                       //   ),
                       // ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 64.0, vertical: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 64.0, vertical: 16.0),
                         child: Text(
                           'Login in with your credentials below',
-                          style:
-                              Theme.of(context).textTheme.labelLarge!.copyWith(
-                                    color: kTextColor,
-                                  ),
+                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                                color: kTextColor,
+                              ),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
                         child: TextFormField(
                           validator: (value) {
-                            if (value!.isEmpty ||
-                                !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
-                                    .hasMatch(value)) {
+                            if (value!.isEmpty || !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(value)) {
                               return 'Use the standard username format like example@breastonco.com';
                             } else {
                               return null;
@@ -82,25 +75,21 @@ class _SignInScreenState extends State<SignInScreen> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: kTextColor, width: 1.0),
+                              borderSide: BorderSide(color: kTextColor, width: 1.0),
                             ),
                             labelText: 'Email Address',
                             hintText: 'example@breastonco.com',
-                            floatingLabelStyle:
-                                TextStyle(color: kSecondarySwatchColor),
+                            floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
                             hintStyle: TextStyle(color: kTextColor),
                             labelStyle: TextStyle(color: kTextColor),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2, color: kSecondarySwatchColor),
+                              borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                             ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 32.0, vertical: 8.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -116,17 +105,14 @@ class _SignInScreenState extends State<SignInScreen> {
                               keyboardType: TextInputType.visiblePassword,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: kTextColor, width: 1.0),
+                                  borderSide: BorderSide(color: kTextColor, width: 1.0),
                                 ),
                                 labelText: 'Create a password',
-                                floatingLabelStyle:
-                                    TextStyle(color: kSecondarySwatchColor),
+                                floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
                                 hintStyle: TextStyle(color: kTextColor),
                                 labelStyle: TextStyle(color: kTextColor),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 2, color: kSecondarySwatchColor),
+                                  borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                                 ),
                               ),
                               obscureText: passwordObscure,
@@ -138,10 +124,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               visualDensity: VisualDensity.compact,
                               child: Text(
                                 'FORGOT PASSWORD?',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
+                                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: kSecondarySwatchColor,
                                     ),
@@ -151,28 +134,19 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 32.0, vertical: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                         child: SizedBox(
                           width: size(context).width,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamedAndRemoveUntil(
-                                  TabsScreen.routeName, (Route route) => false);
+                              Navigator.of(context).pushNamedAndRemoveUntil(TabsScreen.routeName, (Route route) => false);
                             },
-                            style: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style!
-                                .copyWith(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      kSecondarySwatchColor),
+                            style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                                  backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
                                 ),
                             child: Text(
                               'Login',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
+                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: kLightColor,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -183,10 +157,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ],
                   ),
                 ),
-                const SignInSignUpPromptWidget(
-                    text1: 'Join the new way to your health!',
-                    text2: 'Sign Up',
-                    routeName: SignUpScreen.routeName),
+                const SignInSignUpPromptWidget(text1: 'Join the new way to your health!', text2: 'Sign Up', routeName: SignUpScreen.routeName),
               ],
             ),
           ),

@@ -1,6 +1,5 @@
 // Your existing screen file
 
-import 'package:breast_onco/screens/onboard_plan_one_screen.dart';
 import 'package:breast_onco/screens/tabs_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.dart';
@@ -14,12 +13,10 @@ class OnBoardReminderSevenScreen extends StatefulWidget {
   static const routeName = '/onboard-reminder-seven';
 
   @override
-  State<OnBoardReminderSevenScreen> createState() =>
-      _OnBoardReminderSevenScreenState();
+  State<OnBoardReminderSevenScreen> createState() => _OnBoardReminderSevenScreenState();
 }
 
-class _OnBoardReminderSevenScreenState
-    extends State<OnBoardReminderSevenScreen> {
+class _OnBoardReminderSevenScreenState extends State<OnBoardReminderSevenScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -52,7 +49,7 @@ class _OnBoardReminderSevenScreenState
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      PatientInfoWidget(
+                      const PatientInfoWidget(
                         firstName: 'John',
                         lastName: 'Doe',
                         age: '25',
@@ -61,8 +58,7 @@ class _OnBoardReminderSevenScreenState
                         imageModelResult: 'Negative',
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16.0, horizontal: 16.0),
+                        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                         child: Row(
                           children: [
                             Expanded(
@@ -70,22 +66,12 @@ class _OnBoardReminderSevenScreenState
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                style: Theme.of(context)
-                                    .outlinedButtonTheme
-                                    .style!
-                                    .copyWith(
-                                      side:
-                                          MaterialStateProperty.all<BorderSide>(
-                                              BorderSide(
-                                                  color:
-                                                      kSecondarySwatchColor)),
+                                style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                                      side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
                                     ),
                                 child: Text(
                                   'Back',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
+                                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                         color: kSecondarySwatchColor,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -96,19 +82,13 @@ class _OnBoardReminderSevenScreenState
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamedAndRemoveUntil(
-                                      TabsScreen.routeName,
-                                      (Route route) => false);
+                                  Navigator.of(context).pushNamedAndRemoveUntil(TabsScreen.routeName, (Route route) => false);
                                   // Navigator.of(context).pushNamed(OnBoardPlanOneScreen.routeName);
                                 },
-                                style:
-                                    Theme.of(context).elevatedButtonTheme.style,
+                                style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
                                   'Dashboard',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
+                                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                         color: kLightColor,
                                         fontWeight: FontWeight.bold,
                                       ),

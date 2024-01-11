@@ -4,7 +4,7 @@ import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.da
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
 import 'package:breast_onco/widgets/question_radio_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:breast_onco/widgets/question_radio_widget.dart'; // Import the new file
+// Import the new file
 
 class QuestionAndAnswerScreen extends StatefulWidget {
   const QuestionAndAnswerScreen({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
@@ -55,7 +55,11 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                     children: [
                       QuestionWithRadioButtons(
                         question: 'Question 1',
-                        answers: ['Answer 1', 'Answer 2', 'Answer 3'],
+                        answers: const [
+                          'Answer 1',
+                          'Answer 2',
+                          'Answer 3'
+                        ],
                         selectedAnswerIndex: selectedAnswerIndex1,
                         onAnswerSelected: (index) {
                           setState(() {
@@ -65,7 +69,11 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                       ),
                       QuestionWithRadioButtons(
                         question: 'Question 2',
-                        answers: ['Answer 1', 'Answer 2', 'Answer 3'],
+                        answers: const [
+                          'Answer 1',
+                          'Answer 2',
+                          'Answer 3'
+                        ],
                         selectedAnswerIndex: selectedAnswerIndex2,
                         onAnswerSelected: (index) {
                           setState(() {
@@ -75,7 +83,11 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                       ),
                       QuestionWithRadioButtons(
                         question: 'Question 3',
-                        answers: ['Answer 1', 'Answer 2', 'Answer 3'],
+                        answers: const [
+                          'Answer 1',
+                          'Answer 2',
+                          'Answer 3'
+                        ],
                         selectedAnswerIndex: selectedAnswerIndex3,
                         onAnswerSelected: (index) {
                           setState(() {
@@ -85,7 +97,11 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                       ),
                       QuestionWithRadioButtons(
                         question: 'Question 4',
-                        answers: ['Answer 1', 'Answer 2', 'Answer 3'],
+                        answers: const [
+                          'Answer 1',
+                          'Answer 2',
+                          'Answer 3'
+                        ],
                         selectedAnswerIndex: selectedAnswerIndex4,
                         onAnswerSelected: (index) {
                           setState(() {
@@ -95,7 +111,11 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                       ),
                       QuestionWithRadioButtons(
                         question: 'Question 5',
-                        answers: ['Answer 1', 'Answer 2', 'Answer 3'],
+                        answers: const [
+                          'Answer 1',
+                          'Answer 2',
+                          'Answer 3'
+                        ],
                         selectedAnswerIndex: selectedAnswerIndex5,
                         onAnswerSelected: (index) {
                           setState(() {
@@ -113,14 +133,14 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                                   Navigator.of(context).pop();
                                 },
                                 style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                                  side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
-                                ),
+                                      side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
+                                    ),
                                 child: Text(
                                   'Back',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: kSecondarySwatchColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                        color: kSecondarySwatchColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
                               ),
                             ),
@@ -134,9 +154,9 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                                 child: Text(
                                   'Next',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: kLightColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                        color: kLightColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
                               ),
                             ),

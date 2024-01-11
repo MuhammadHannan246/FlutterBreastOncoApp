@@ -16,27 +16,24 @@ class GoalsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
-              Text(
-                'Patients Details',
-                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                  color: kSecondarySwatchColor,
-                  fontWeight: FontWeight.bold,
-                )
-              ),
-              GoalListTile(icon: Icons.person, personName: 'Patient 1'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 2'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 3'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 4'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 5'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 6'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 7'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 8'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 9'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 10'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 11'),
-              GoalListTile(icon: Icons.person, personName: 'Patient 12'),
+              Text('Patients Details',
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                        color: kSecondarySwatchColor,
+                        fontWeight: FontWeight.bold,
+                      )),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 1'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 2'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 3'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 4'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 5'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 6'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 7'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 8'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 9'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 10'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 11'),
+              const GoalListTile(icon: Icons.person, personName: 'Patient 12'),
               // Add more GoalListTiles as needed
             ],
           ),

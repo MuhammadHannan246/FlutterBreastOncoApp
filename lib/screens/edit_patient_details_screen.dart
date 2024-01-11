@@ -1,4 +1,3 @@
-import 'package:breast_onco/screens/onboard_reminder_six_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.dart';
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
@@ -31,7 +30,7 @@ class _EditPatientDetailsScreenState extends State<EditPatientDetailsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
@@ -52,25 +51,25 @@ class _EditPatientDetailsScreenState extends State<EditPatientDetailsScreen> {
                     children: [
                       TextFormField(
                         controller: firstNameController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'First Name',
                         ),
                       ),
                       TextFormField(
                         controller: lastNameController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Last Name',
                         ),
                       ),
                       TextFormField(
                         controller: ageController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Age',
                         ),
                       ),
                       TextFormField(
                         controller: contactNumberController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Contact Number',
                         ),
                       ),
@@ -84,14 +83,14 @@ class _EditPatientDetailsScreenState extends State<EditPatientDetailsScreen> {
                                   Navigator.of(context).pop();
                                 },
                                 style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                                  side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
-                                ),
+                                      side: MaterialStateProperty.all<BorderSide>(BorderSide(color: kSecondarySwatchColor)),
+                                    ),
                                 child: Text(
                                   'Back',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: kSecondarySwatchColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                        color: kSecondarySwatchColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
                               ),
                             ),
@@ -99,20 +98,16 @@ class _EditPatientDetailsScreenState extends State<EditPatientDetailsScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  String firstName = firstNameController.text;
-                                  String lastName = lastNameController.text;
-                                  String age = ageController.text;
-                                  String contactNumber = contactNumberController.text;
-
-                                  Navigator.of(context).pushNamed(OnBoardReminderSixScreen.routeName);
+                                  Navigator.pop(context);
+                                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Successful')));
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
                                   'Next',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: kLightColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                        color: kLightColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
                               ),
                             ),

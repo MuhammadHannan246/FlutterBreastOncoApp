@@ -3,7 +3,6 @@ import 'package:breast_onco/screens/sign_up_password_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpMobileScreen extends StatefulWidget {
   const SignUpMobileScreen({super.key});
@@ -42,31 +41,26 @@ class _SignUpMobileScreenState extends State<SignUpMobileScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
+                        padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
                         child: TextFormField(
                           controller: mobileController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: kTextColor, width: 1.0),
+                              borderSide: BorderSide(color: kTextColor, width: 1.0),
                             ),
                             labelText: 'Enter mobile number',
-                            floatingLabelStyle:
-                                TextStyle(color: kSecondarySwatchColor),
+                            floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
                             hintStyle: TextStyle(color: kTextColor),
                             labelStyle: TextStyle(color: kTextColor),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 2, color: kSecondarySwatchColor),
+                              borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                             ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 32.0, vertical: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                         child: Row(
                           children: [
                             Expanded(
@@ -74,20 +68,12 @@ class _SignUpMobileScreenState extends State<SignUpMobileScreen> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                style: Theme.of(context)
-                                    .outlinedButtonTheme
-                                    .style!
-                                    .copyWith(
-                                      side: MaterialStateProperty.all(
-                                          BorderSide(
-                                              color: kSecondarySwatchColor)),
+                                style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                                      side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
                                     ),
                                 child: Text(
                                   'Back',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
+                                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                         color: kSecondarySwatchColor,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -98,23 +84,14 @@ class _SignUpMobileScreenState extends State<SignUpMobileScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed(
-                                      SignUpPasswordScreen.routeName);
+                                  Navigator.of(context).pushNamed(SignUpPasswordScreen.routeName);
                                 },
-                                style: Theme.of(context)
-                                    .elevatedButtonTheme
-                                    .style!
-                                    .copyWith(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              kSecondarySwatchColor),
+                                style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                                      backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
                                     ),
                                 child: Text(
                                   'Next',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
+                                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                         color: kLightColor,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -127,10 +104,7 @@ class _SignUpMobileScreenState extends State<SignUpMobileScreen> {
                     ],
                   ),
                 ),
-                const SignInSignUpPromptWidget(
-                    text1: 'Already have an account?',
-                    text2: 'Sign In',
-                    routeName: SignInScreen.routeName),
+                const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),
               ],
             ),
           ),

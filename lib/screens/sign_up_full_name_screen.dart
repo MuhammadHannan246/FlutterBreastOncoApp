@@ -3,7 +3,6 @@ import 'package:breast_onco/screens/sign_up_mobile_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpFullNameScreen extends StatefulWidget {
   const SignUpFullNameScreen({super.key});
@@ -34,25 +33,25 @@ class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
                   child: Column(
                     children: [
                       const SizedBox(height: 32.0),
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Image.asset(
-                            'assets/images/logo-purple.png',
-                            // color: kSecondarySwatchColor,
-                            height: 280,
-                            fit: BoxFit.contain,
-                          ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Image.asset(
+                          'assets/images/logo-purple.png',
+                          // color: kSecondarySwatchColor,
+                          height: 280,
+                          fit: BoxFit.contain,
                         ),
-                        // Padding(
-                        //   padding: const EdgeInsets.all(16.0),
-                        //   child:Text(
-                        //     'Enter your full name',
-                        //     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        //       color: kTextColor,
-                        //       // fontWeight: FontWeight.bold,
-                        //     ),
-                        //   ),
-                        // ),
+                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.all(16.0),
+                      //   child:Text(
+                      //     'Enter your full name',
+                      //     style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      //       color: kTextColor,
+                      //       // fontWeight: FontWeight.bold,
+                      //     ),
+                      //   ),
+                      // ),
                       Padding(
                         padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
                         child: TextFormField(
@@ -103,8 +102,8 @@ class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
                                   Navigator.of(context).pop();
                                 },
                                 style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                                  side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
-                                ),
+                                      side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
+                                    ),
                                 child: Text(
                                   'Back',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -121,9 +120,8 @@ class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
                                   Navigator.of(context).pushNamed(SignUpMobileScreen.routeName);
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                                  backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
-                                  
-                                ),
+                                      backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
+                                    ),
                                 child: Text(
                                   'Next',
                                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(

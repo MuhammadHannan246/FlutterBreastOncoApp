@@ -1,6 +1,5 @@
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class CircularPercentIndicatorRabbitWidget extends StatelessWidget {

@@ -1,10 +1,8 @@
 import 'package:breast_onco/screens/onboard_review_order_two_screen.dart';
 import 'package:breast_onco/screens/sign_in_screen.dart';
-import 'package:breast_onco/screens/sign_up_verify_password_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpPasswordScreen extends StatefulWidget {
   const SignUpPasswordScreen({super.key});
@@ -61,17 +59,14 @@ class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
                             keyboardType: TextInputType.visiblePassword,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: kTextColor, width: 1.0),
+                                borderSide: BorderSide(color: kTextColor, width: 1.0),
                               ),
                               labelText: 'Create a password',
-                              floatingLabelStyle:
-                                  TextStyle(color: kSecondarySwatchColor),
+                              floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
                               hintStyle: TextStyle(color: kTextColor),
                               labelStyle: TextStyle(color: kTextColor),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 2, color: kSecondarySwatchColor),
+                                borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                               ),
                             ),
                             obscureText: passwordObscure,
@@ -89,20 +84,13 @@ class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  style: Theme.of(context)
-                                      .outlinedButtonTheme
-                                      .style!
-                                      .copyWith(
-                                          side: MaterialStateProperty.all(
-                                              BorderSide(
+                                  style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                                          side: MaterialStateProperty.all(BorderSide(
                                         color: kSecondarySwatchColor,
                                       ))),
                                   child: Text(
                                     'Back',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge!
-                                        .copyWith(
+                                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                           color: kSecondarySwatchColor,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -114,25 +102,15 @@ class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     if (formKey.currentState!.validate()) {
-                                      Navigator.of(context).pushNamed(
-                                          OnboardReviewOrderTwoScreen
-                                              .routeName);
+                                      Navigator.of(context).pushNamed(OnboardReviewOrderTwoScreen.routeName);
                                     }
                                   },
-                                  style: Theme.of(context)
-                                      .elevatedButtonTheme
-                                      .style!
-                                      .copyWith(
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
-                                                kSecondarySwatchColor),
+                                  style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                                        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
                                       ),
                                   child: Text(
                                     'Next',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge!
-                                        .copyWith(
+                                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                           color: kLightColor,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -145,10 +123,7 @@ class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
                       ],
                     ),
                   ),
-                  const SignInSignUpPromptWidget(
-                      text1: 'Already have an account?',
-                      text2: 'Sign In',
-                      routeName: SignInScreen.routeName),
+                  const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),
                 ],
               ),
             ),

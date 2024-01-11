@@ -5,7 +5,6 @@ import 'package:breast_onco/screens/goals_screen.dart';
 import 'package:breast_onco/screens/support_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -56,38 +55,12 @@ class _TabsScreenState extends State<TabsScreen> {
     ];
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(left: 16.0, bottom: 16.0),
-            child: Image.asset(
-              'assets/images/logo-purple.png',
-              height: 280,
-              fit: BoxFit.contain,
-            ),
-          ),
-          const Spacer(),
-          IconButton(
-            onPressed: () {},
-
-            
-            icon: SvgPicture.asset(
-              'assets/images/chat-icon.svg',
-              height: 24,
-              fit: BoxFit.contain,
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(right: 16.0),
-            child: IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                'assets/images/trophy-icon.svg',
-                height: 24,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-        ],
+        title: Image.asset(
+          'assets/images/logo-purple.png',
+          height: 100,
+          fit: BoxFit.cover,
+        ),
+        centerTitle: true,
       ),
       body: pages[_selectedPageIndex]['page'],
       bottomNavigationBar: Container(

@@ -1,7 +1,5 @@
-import 'package:breast_onco/screens/course_filters_screen.dart';
 import 'package:breast_onco/screens/question_and_answer_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
-import 'package:breast_onco/widgets/course_card.dart';
 import 'package:breast_onco/widgets/heading_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,8 +19,6 @@ class _CoursesScreenState extends State<CoursesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String selectedValue = 'All Categories';
-
     return Scaffold(
       body: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
@@ -41,8 +37,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
+                padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
                 child: TextFormField(
                   controller: firstNameController,
                   keyboardType: TextInputType.name,
@@ -56,8 +51,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     hintStyle: TextStyle(color: kTextColor),
                     labelStyle: TextStyle(color: kTextColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 2, color: kSecondarySwatchColor),
+                      borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                     ),
                   ),
                 ),
@@ -70,8 +64,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
                 child: TextFormField(
                   controller: lastNameController,
                   keyboardType: TextInputType.name,
@@ -85,8 +78,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     hintStyle: TextStyle(color: kTextColor),
                     labelStyle: TextStyle(color: kTextColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 2, color: kSecondarySwatchColor),
+                      borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                     ),
                   ),
                 ),
@@ -99,8 +91,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
+                padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
                 child: TextFormField(
                   controller: ageController,
                   keyboardType: TextInputType.number,
@@ -113,8 +104,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     hintStyle: TextStyle(color: kTextColor),
                     labelStyle: TextStyle(color: kTextColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 2, color: kSecondarySwatchColor),
+                      borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                     ),
                   ),
                 ),
@@ -127,8 +117,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
+                padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
                 child: TextFormField(
                   controller: mobileController,
                   keyboardType: TextInputType.number,
@@ -141,30 +130,29 @@ class _CoursesScreenState extends State<CoursesScreen> {
                     hintStyle: TextStyle(color: kTextColor),
                     labelStyle: TextStyle(color: kTextColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 2, color: kSecondarySwatchColor),
+                      borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 16.0),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(QuestionAndAnswerScreen.routeName, (Route route) => false);
-                              },
-                              style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                                backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
-                              ),
-                              child: Text(
-                                'Add Patient',
-                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                      color: kLightColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                              ),
-                            ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamedAndRemoveUntil(QuestionAndAnswerScreen.routeName, (Route route) => false);
+                  },
+                  style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
+                      ),
+                  child: Text(
+                    'Add Patient',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: kLightColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
               ),
             ],
           ),

@@ -8,6 +8,7 @@ class QuestionWithRadioButtons extends StatelessWidget {
   final void Function(int) onAnswerSelected;
 
   const QuestionWithRadioButtons({
+    super.key,
     required this.question,
     required this.answers,
     required this.selectedAnswerIndex,
@@ -25,7 +26,7 @@ class QuestionWithRadioButtons extends StatelessWidget {
                 color: kTextColor,
               ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Column(
           children: List.generate(
             answers.length,
@@ -40,7 +41,7 @@ class QuestionWithRadioButtons extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }

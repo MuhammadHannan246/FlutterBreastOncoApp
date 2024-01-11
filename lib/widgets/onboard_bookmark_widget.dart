@@ -59,11 +59,14 @@ class OnboardBookmarkWidgetState extends State<OnboardBookmarkWidget> with Singl
               fit: BoxFit.contain,
             ),
             const SizedBox(width: 8),
-            Text(
-              widget.text,
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: kDarkColor,
-                  ),
+            FittedBox(
+              child: Text(
+                widget.text,
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      color: kDarkColor,
+                    ),
+                overflow: TextOverflow.ellipsis, // or TextOverflow.fade
+              ),
             ),
             const SizedBox(width: 16),
           ],

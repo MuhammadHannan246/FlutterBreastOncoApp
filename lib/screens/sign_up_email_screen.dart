@@ -3,7 +3,6 @@ import 'package:breast_onco/screens/sign_up_full_name_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignUpEmailScreen extends StatefulWidget {
   const SignUpEmailScreen({super.key});
@@ -47,12 +46,12 @@ class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
-                          child:Text(
+                          child: Text(
                             'SignUp with Email',
                             style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                              color: kTextColor,
-                              // fontWeight: FontWeight.bold,
-                            ),
+                                  color: kTextColor,
+                                  // fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         // ConstrainedBox(
@@ -96,9 +95,8 @@ class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
                                     Navigator.of(context).pop();
                                   },
                                   style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                                    side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
-                                    
-                                  ),
+                                        side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
+                                      ),
                                   child: Text(
                                     'Back',
                                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -117,8 +115,8 @@ class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
                                     }
                                   },
                                   style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                                    backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
-                                  ),
+                                        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
+                                      ),
                                   child: Text(
                                     'Next',
                                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(

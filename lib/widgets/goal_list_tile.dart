@@ -13,14 +13,14 @@ class GoalListTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          contentPadding: EdgeInsets.all(16.0),
+          contentPadding: const EdgeInsets.all(16.0),
           leading: Icon(
             icon,
             color: kSecondarySwatchColor,
           ),
           title: Text(
             personName,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
             ),
           ),
@@ -28,7 +28,7 @@ class GoalListTile extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                icon: Icon(Icons.edit),
+                icon: const Icon(Icons.edit),
                 onPressed: () {
                   Navigator.of(context).pushNamed(EditPatientDetailsScreen.routeName);
                   // Handle edit button press
@@ -36,14 +36,14 @@ class GoalListTile extends StatelessWidget {
                 color: kSecondarySwatchColor,
               ),
               IconButton(
-                icon: Icon(Icons.visibility),
+                icon: const Icon(Icons.visibility),
                 onPressed: () {
                   // Handle view button press
                 },
                 color: kSecondarySwatchColor,
               ),
               IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () {
                   // Handle delete button press
                 },
