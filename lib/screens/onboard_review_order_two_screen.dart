@@ -75,7 +75,6 @@ class _OnboardReviewOrderTwoScreenState extends State<OnboardReviewOrderTwoScree
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
-                                 
                                   TextSpan(
                                     text: ' family!',
                                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -109,8 +108,8 @@ class _OnboardReviewOrderTwoScreenState extends State<OnboardReviewOrderTwoScree
                               Navigator.of(context).pushNamedAndRemoveUntil(TabsScreen.routeName, (Route route) => false);
                             },
                             style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                              backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
-                            ),
+                                  backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
+                                ),
                             child: Text(
                               'Go to dashboard',
                               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
