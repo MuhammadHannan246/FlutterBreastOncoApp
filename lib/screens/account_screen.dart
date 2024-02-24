@@ -15,16 +15,12 @@ class AccountScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
-              Text(
-                'User Account',
-                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                  color: kSecondarySwatchColor,
-                  fontWeight: FontWeight.bold,
-                )
-              ),
-         
+              Text('User Account',
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                        color: kSecondarySwatchColor,
+                        fontWeight: FontWeight.bold,
+                      )),
             ],
           ),
         ),
