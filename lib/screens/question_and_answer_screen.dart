@@ -147,7 +147,7 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pop();
+                                  // Navigator.of(context).pushNamed(routeName);
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(

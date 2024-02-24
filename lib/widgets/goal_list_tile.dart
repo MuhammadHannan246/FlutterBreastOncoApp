@@ -36,13 +36,6 @@ class GoalListTile extends StatelessWidget {
                 color: kSecondarySwatchColor,
               ),
               IconButton(
-                icon: const Icon(Icons.visibility),
-                onPressed: () {
-                  // Handle view button press
-                },
-                color: kSecondarySwatchColor,
-              ),
-              IconButton(
                 icon: const Icon(Icons.delete),
                 onPressed: () {
                   // Handle delete button press
