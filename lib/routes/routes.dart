@@ -1,6 +1,6 @@
 import 'package:breast_onco/screens/account_screen.dart';
 import 'package:breast_onco/screens/courses_screen.dart';
-import 'package:breast_onco/screens/dash_screen.dart';
+import 'package:breast_onco/screens/home_screen.dart';
 import 'package:breast_onco/screens/edit_patient_details_screen.dart';
 import 'package:breast_onco/screens/goals_screen.dart';
 import 'package:breast_onco/screens/onboard_review_order_two_screen.dart';
@@ -26,7 +26,7 @@ class PageRoutes {
       SignUpOneScreen.routeName: (context) => const SignUpOneScreen(),
       SignUpVerifyPasswordScreen.routeName: (context) => const SignUpVerifyPasswordScreen(),
       OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen(),
-      DashScreen.routeName: (context) => const DashScreen(),
+      HomeScreen.routeName: (context) => const HomeScreen(),
       GoalsScreen.routeName: (context) => const GoalsScreen(),
       CoursesScreen.routeName: (context) => const CoursesScreen(),
       SupportScreen.routeName: (context) => const SupportScreen(),

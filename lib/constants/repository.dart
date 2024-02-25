@@ -7,6 +7,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+String? uncachedEmail;
+
 class Repository {
   static final auth = FirebaseAuth.instance;
   static final databaseUser = FirebaseDatabase.instance.ref('user');

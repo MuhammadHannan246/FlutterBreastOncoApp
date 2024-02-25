@@ -1,6 +1,6 @@
 import 'package:breast_onco/screens/account_screen.dart';
 import 'package:breast_onco/screens/courses_screen.dart';
-import 'package:breast_onco/screens/dash_screen.dart';
+import 'package:breast_onco/screens/home_screen.dart';
 import 'package:breast_onco/screens/goals_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> pages = [
       {
-        'page': const DashScreen(),
+        'page': const HomeScreen(),
         'title': 'Dash',
         'icon': Icons.rocket,
       },

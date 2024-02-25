@@ -1,13 +1,47 @@
+import 'package:breast_onco/constants/component.dart';
 import 'package:breast_onco/screens/sign_in_screen.dart';
 import 'package:breast_onco/screens/sign_up_one_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:breast_onco/widgets/on_board_list_tile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:breast_onco/screens/tabs_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
   static const routeName = '/sign-up';
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
+  signInWithGoogle() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    try {
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken,
+        );
+
+        await firebaseAuth.signInWithCredential(credential).then(
+              (value) => Navigator.pushNamedAndRemoveUntil(context, TabsScreen.routeName, (route) => false),
+            );
+      }
+    } catch (e) {
+      flutterToast('An Error Occurred During Authentication');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +81,16 @@ class SignUpScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const Column(
+                Column(
                   children: [
-                    OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
-                    OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
+                    ElevatedButton(
+                      onPressed: () {
+                        signInWithGoogle();
+                      },
+                      child: const Text('ads'),
+                    ),
+                    const OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
+                    const OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
                   ],
                 ),
                 const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),

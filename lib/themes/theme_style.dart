@@ -5,13 +5,13 @@ class ThemeStyle {
   static ThemeData lightTheme = ThemeData(
     appBarTheme: AppBarTheme(
       backgroundColor: kLightColor,
-      iconTheme: IconThemeData(color: kPrimarySwatchColor),
-      foregroundColor: kPrimarySwatchColor,
+      iconTheme: IconThemeData(color: kSecondarySwatchColor),
+      foregroundColor: kSecondarySwatchColor,
       surfaceTintColor: kLightColor,
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
       ),
     ),
     iconButtonTheme: IconButtonThemeData(
@@ -23,12 +23,12 @@ class ThemeStyle {
     ),
     menuButtonTheme: MenuButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -40,56 +40,56 @@ class ThemeStyle {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kLightColor),
         side: MaterialStateProperty.all<BorderSide>(
-          BorderSide(color: kPrimarySwatchColor),
+          BorderSide(color: kSecondarySwatchColor),
         ),
       ),
     ),
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
       ),
     ),
     datePickerTheme: DatePickerThemeData(
       backgroundColor: kLightColor,
       todayBackgroundColor: MaterialStatePropertyAll(kSecondarySwatchColor),
       confirmButtonStyle: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
       ),
     ),
     radioTheme: RadioThemeData(
       fillColor: MaterialStateColor.resolveWith(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.selected)) {
-            return kPrimarySwatchColor;
+            return kSecondarySwatchColor;
           }
           return kTextColor;
         },
       ),
     ),
     scaffoldBackgroundColor: kLightColor,
-    primarySwatch: kPrimarySwatchColor,
+    primarySwatch: kSecondarySwatchColor,
     dialogBackgroundColor: kLightColor,
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: kLightColor),
     textTheme: TextTheme(
-      displayLarge: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      displayMedium: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      displaySmall: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
+      displayLarge: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      displayMedium: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      displaySmall: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
       // Don't edit
-      headlineLarge: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor, fontSize: 26.0),
+      headlineLarge: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor, fontSize: 26.0),
       // Don't edit
       headlineMedium: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor.shade700, fontSize: 20),
       // Don't edit
       headlineSmall: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor.shade700, fontSize: 22),
-      titleLarge: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      titleMedium: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      titleSmall: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
+      titleLarge: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      titleMedium: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      titleSmall: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
       // Don't edit
       bodyLarge: const TextStyle(fontFamily: 'Montserrat'),
-      bodyMedium: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      bodySmall: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      labelLarge: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      labelMedium: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
-      labelSmall: TextStyle(fontFamily: 'Montserrat', color: kPrimarySwatchColor),
+      bodyMedium: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      bodySmall: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      labelLarge: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      labelMedium: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
+      labelSmall: TextStyle(fontFamily: 'Montserrat', color: kSecondarySwatchColor),
     ),
   );
 }
