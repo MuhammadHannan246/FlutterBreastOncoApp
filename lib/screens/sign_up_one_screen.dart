@@ -1,18 +1,18 @@
 import 'package:breast_onco/screens/sign_in_screen.dart';
-import 'package:breast_onco/screens/sign_up_full_name_screen.dart';
+import 'package:breast_onco/screens/sign_up_two_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
 
-class SignUpEmailScreen extends StatefulWidget {
-  const SignUpEmailScreen({super.key});
-  static const routeName = '/sign-up-email';
+class SignUpOneScreen extends StatefulWidget {
+  const SignUpOneScreen({super.key});
+  static const routeName = '/sign-up-one';
 
   @override
-  State<SignUpEmailScreen> createState() => _SignUpEmailScreenState();
+  State<SignUpOneScreen> createState() => _SignUpOneScreenState();
 }
 
-class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
+class _SignUpOneScreenState extends State<SignUpOneScreen> {
   final formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
 
@@ -111,7 +111,11 @@ class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     if (formKey.currentState!.validate()) {
-                                      Navigator.of(context).pushNamed(SignUpFullNameScreen.routeName);
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => SignUpTwoScreen(email: emailController.text),
+                                        ),
+                                      );
                                     }
                                   },
                                   style: Theme.of(context).elevatedButtonTheme.style!.copyWith(

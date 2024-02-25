@@ -1,5 +1,5 @@
 import 'package:breast_onco/screens/sign_in_screen.dart';
-import 'package:breast_onco/screens/sign_up_email_screen.dart';
+import 'package:breast_onco/screens/sign_up_one_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:breast_onco/widgets/on_board_list_tile_widget.dart';
@@ -49,9 +49,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 const Column(
                   children: [
-                    OnBoardListTileWidget(text: 'Sign up with Facebook', image: 'assets/images/facebook-icon.svg', routeName: SignUpEmailScreen.routeName),
-                    OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpEmailScreen.routeName),
-                    OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpEmailScreen.routeName),
+                    OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
+                    OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
                   ],
                 ),
                 const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),

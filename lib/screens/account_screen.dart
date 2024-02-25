@@ -1,4 +1,6 @@
+import 'package:breast_onco/constants/repository.dart';
 import 'package:breast_onco/themes/colors.dart';
+import 'package:breast_onco/widgets/profile_options.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -16,11 +18,21 @@ class AccountScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('User Account',
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: kSecondarySwatchColor,
-                        fontWeight: FontWeight.bold,
-                      )),
+              Text(
+                'User Account',
+                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                      color: kSecondarySwatchColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 16.0),
+              ProfileOptions(
+                title: 'Logout',
+                icon: Icons.logout,
+                onTap: () {
+                  Repository.logout(context);
+                },
+              ),
             ],
           ),
         ),

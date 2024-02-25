@@ -7,16 +7,12 @@ import 'package:breast_onco/screens/onboard_review_order_two_screen.dart';
 import 'package:breast_onco/screens/otp_verification_screen.dart';
 import 'package:breast_onco/screens/question_and_answer_screen.dart';
 import 'package:breast_onco/screens/sign_in_screen.dart';
-import 'package:breast_onco/screens/sign_up_email_screen.dart';
-import 'package:breast_onco/screens/sign_up_full_name_screen.dart';
-import 'package:breast_onco/screens/sign_up_mobile_screen.dart';
-import 'package:breast_onco/screens/sign_up_password_screen.dart';
+import 'package:breast_onco/screens/sign_up_one_screen.dart';
 import 'package:breast_onco/screens/sign_up_screen.dart';
 import 'package:breast_onco/screens/sign_up_verify_password_screen.dart';
 import 'package:breast_onco/screens/splash_screen.dart';
 import 'package:breast_onco/screens/support_screen.dart';
 import 'package:breast_onco/screens/tabs_screen.dart';
-
 import 'package:flutter/material.dart';
 
 class PageRoutes {
@@ -27,10 +23,7 @@ class PageRoutes {
       TabsScreen.routeName: (context) => const TabsScreen(),
       SignInScreen.routeName: (context) => const SignInScreen(),
       SignUpScreen.routeName: (context) => const SignUpScreen(),
-      SignUpEmailScreen.routeName: (context) => const SignUpEmailScreen(),
-      SignUpFullNameScreen.routeName: (context) => const SignUpFullNameScreen(),
-      SignUpMobileScreen.routeName: (context) => const SignUpMobileScreen(),
-      SignUpPasswordScreen.routeName: (context) => const SignUpPasswordScreen(),
+      SignUpOneScreen.routeName: (context) => const SignUpOneScreen(),
       SignUpVerifyPasswordScreen.routeName: (context) => const SignUpVerifyPasswordScreen(),
       OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen(),
       DashScreen.routeName: (context) => const DashScreen(),

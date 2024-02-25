@@ -1,20 +1,22 @@
 import 'package:breast_onco/screens/sign_in_screen.dart';
-import 'package:breast_onco/screens/sign_up_mobile_screen.dart';
+import 'package:breast_onco/screens/sign_up_four_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
 
-class SignUpFullNameScreen extends StatefulWidget {
-  const SignUpFullNameScreen({super.key});
-  static const routeName = '/sign-up-full-name';
+class SignUpThreeScreen extends StatefulWidget {
+  final String email;
+  final String firstName;
+  final String lastName;
+
+  const SignUpThreeScreen({super.key, required this.email, required this.firstName, required this.lastName});
 
   @override
-  State<SignUpFullNameScreen> createState() => _SignUpFullNameScreenState();
+  State<SignUpThreeScreen> createState() => _SignUpThreeScreenState();
 }
 
-class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
+class _SignUpThreeScreenState extends State<SignUpThreeScreen> {
+  TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,52 +39,20 @@ class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
                         padding: const EdgeInsets.all(16.0),
                         child: Image.asset(
                           'assets/images/logo-purple.png',
-                          // color: kSecondarySwatchColor,
                           height: 280,
                           fit: BoxFit.contain,
                         ),
                       ),
-                      // Padding(
-                      //   padding: const EdgeInsets.all(16.0),
-                      //   child:Text(
-                      //     'Enter your full name',
-                      //     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      //       color: kTextColor,
-                      //       // fontWeight: FontWeight.bold,
-                      //     ),
-                      //   ),
-                      // ),
                       Padding(
                         padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 32.0, bottom: 8.0),
                         child: TextFormField(
-                          controller: firstNameController,
-                          keyboardType: TextInputType.name,
+                          controller: phoneController,
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: kTextColor, width: 1.0),
                             ),
-                            labelText: 'First Name',
-                            hintText: 'Muhammad',
-                            floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
-                            hintStyle: TextStyle(color: kTextColor),
-                            labelStyle: TextStyle(color: kTextColor),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
-                        child: TextFormField(
-                          controller: lastNameController,
-                          keyboardType: TextInputType.name,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: kTextColor, width: 1.0),
-                            ),
-                            labelText: 'Last Name',
-                            hintText: 'Hannan',
+                            labelText: 'Enter mobile number',
                             floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
                             hintStyle: TextStyle(color: kTextColor),
                             labelStyle: TextStyle(color: kTextColor),
@@ -117,7 +87,16 @@ class _SignUpFullNameScreenState extends State<SignUpFullNameScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed(SignUpMobileScreen.routeName);
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => SignUpFourScreen(
+                                        email: widget.email,
+                                        firstName: widget.firstName,
+                                        lastName: widget.lastName,
+                                        phone: phoneController.text,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                                       backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),

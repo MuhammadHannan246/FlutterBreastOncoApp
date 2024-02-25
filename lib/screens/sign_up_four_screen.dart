@@ -1,18 +1,22 @@
-import 'package:breast_onco/screens/onboard_review_order_two_screen.dart';
+import 'package:breast_onco/constants/repository.dart';
 import 'package:breast_onco/screens/sign_in_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPasswordScreen extends StatefulWidget {
-  const SignUpPasswordScreen({super.key});
-  static const routeName = '/sign-up-password';
+class SignUpFourScreen extends StatefulWidget {
+  final String email;
+  final String firstName;
+  final String lastName;
+  final String phone;
+
+  const SignUpFourScreen({super.key, required this.email, required this.firstName, required this.lastName, required this.phone});
 
   @override
-  State<SignUpPasswordScreen> createState() => _SignUpPasswordScreenState();
+  State<SignUpFourScreen> createState() => _SignUpFourScreenState();
 }
 
-class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
+class _SignUpFourScreenState extends State<SignUpFourScreen> {
   final formKey = GlobalKey<FormState>();
   TextEditingController passwordController = TextEditingController();
   bool passwordObscure = true;
@@ -101,8 +105,16 @@ class _SignUpPasswordScreenState extends State<SignUpPasswordScreen> {
                               Expanded(
                                 child: ElevatedButton(
                                   onPressed: () {
+                                    //   Navigator.of(context).pushNamed(OnboardReviewOrderTwoScreen.routeName);
                                     if (formKey.currentState!.validate()) {
-                                      Navigator.of(context).pushNamed(OnboardReviewOrderTwoScreen.routeName);
+                                      Repository().userAuth(
+                                        context: context,
+                                        email: widget.email,
+                                        firstName: widget.firstName,
+                                        lastName: widget.lastName,
+                                        phone: widget.phone,
+                                        password: passwordController.text,
+                                      );
                                     }
                                   },
                                   style: Theme.of(context).elevatedButtonTheme.style!.copyWith(

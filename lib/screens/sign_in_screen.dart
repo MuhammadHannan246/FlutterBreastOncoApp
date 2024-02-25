@@ -1,6 +1,6 @@
 import 'package:breast_onco/constants/component.dart';
+import 'package:breast_onco/constants/repository.dart';
 import 'package:breast_onco/screens/sign_up_screen.dart';
-import 'package:breast_onco/screens/tabs_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,7 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   final formKey = GlobalKey<FormState>();
+  Repository apis = Repository();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool passwordObscure = true;
@@ -28,7 +29,8 @@ class _SignInScreenState extends State<SignInScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
-          child: Center(
+          child: Form(
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -114,6 +116,14 @@ class _SignInScreenState extends State<SignInScreen> {
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
                                 ),
+                                suffixIcon: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      passwordObscure = !passwordObscure;
+                                    });
+                                  },
+                                  icon: Icon(passwordObscure ? Icons.visibility_off : Icons.visibility, color: kSecondarySwatchColor),
+                                ),
                               ),
                               obscureText: passwordObscure,
                               enableSuggestions: false,
@@ -139,7 +149,9 @@ class _SignInScreenState extends State<SignInScreen> {
                           width: size(context).width,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamedAndRemoveUntil(TabsScreen.routeName, (Route route) => false);
+                              if (formKey.currentState!.validate()) {
+                                apis.login(context, emailController.text, passwordController.text);
+                              }
                             },
                             style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                                   backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
