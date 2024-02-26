@@ -26,6 +26,24 @@ class AccountScreen extends StatelessWidget {
                     ),
               ),
               const SizedBox(height: 16.0),
+              // Statically display user name
+              Text(
+                'Muhammad Hannan',
+                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                      color: kSecondarySwatchColor,
+
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              // Statically display user email
+              Text(
+                 'hannan@gmail.com',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: kSecondarySwatchColor,
+                      
+                ),
+              ),
+              const SizedBox(height: 16.0),
               ProfileOptions(
                 title: 'Logout',
                 icon: Icons.logout,

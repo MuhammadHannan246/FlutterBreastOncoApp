@@ -14,6 +14,8 @@ class QuestionAndAnswerScreen extends StatefulWidget {
 
 class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
   final List<String> questions = [
+    "Positive Family Hx for Breast CA",
+    "At what age did you birth to your first child?",
     "Have you ever been diagnosed with breast cancer before?",
     "Do you have a family history of breast cancer, particularly in a first-degree relative (such as a mother)?",
     "Have you ever had abnormal breast biopsies or other breast conditions?",
