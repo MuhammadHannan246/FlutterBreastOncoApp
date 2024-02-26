@@ -5,13 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 class OnBoardListTileWidget extends StatelessWidget {
   final String text;
   final String image;
-  final String routeName;
+  final VoidCallback onTap;
 
   const OnBoardListTileWidget({
     super.key,
     required this.text,
     required this.image,
-    required this.routeName,
+    required this.onTap,
   });
 
   @override
@@ -24,18 +24,11 @@ class OnBoardListTileWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.0),
       ),
       child: ListTile(
-        onTap: () {
-          Navigator.of(context).pushNamed(routeName);
-        },
+        onTap: onTap,
         leading: CircleAvatar(
           backgroundColor: kSecondarySwatchColor,
           child: Container(
             padding: const EdgeInsets.all(4.0),
-            // decoration: BoxDecoration(
-            //   shape: BoxShape.circle,
-            //   color: kSecondarySwatchColor.shade700,
-            //   border: Border.all(color: kLightColor),
-            // ),
             child: SvgPicture.asset(
               image,
               height: 24,

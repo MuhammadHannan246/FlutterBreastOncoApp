@@ -56,21 +56,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: Image.asset(
                     'assets/images/logo-purple.png',
-                    // color: kSecondarySwatchColor,
                     height: 280,
                     fit: BoxFit.contain,
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(16.0),
-                //   child: Text(
-                //     'Breast Onco',
-                //     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                //           color: kSecondarySwatchColor,
-                //           fontWeight: FontWeight.bold,
-                //     )
-                //   )
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 64.0, vertical: 16.0),
                   child: Text(
@@ -81,10 +70,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const Column(
+                Column(
                   children: [
-                    OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
-                    OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
+                    OnBoardListTileWidget(
+                      text: 'Sign up with Google',
+                      image: 'assets/images/gmail-icon.svg',
+                      onTap: () {
+                        signInWithGoogle();
+                      },
+                    ),
+                    OnBoardListTileWidget(
+                      text: 'Sign up with Email',
+                      image: 'assets/images/email-icon.svg',
+                      onTap: () {
+                        Navigator.of(context).pushNamed(SignUpOneScreen.routeName);
+                      },
+                    ),
                   ],
                 ),
                 const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),
