@@ -49,6 +49,8 @@ dependencies:
   firebase_storage: any
   firebase_database: ^10.2.0
   google_sign_in: ^6.2.1
+  modal_progress_hud_nsn: ^0.5.1
+  mask_text_input_formatter: ^2.9.0
 
 
   # The following adds the Cupertino Icons font to your application.

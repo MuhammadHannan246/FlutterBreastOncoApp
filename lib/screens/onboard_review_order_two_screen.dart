@@ -111,7 +111,7 @@ class _OnboardReviewOrderTwoScreenState extends State<OnboardReviewOrderTwoScree
                                   backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
                                 ),
                             child: Text(
-                              'Go to dashboard',
+                              'Go to Dashboard',
                               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: kLightColor,
                                     fontWeight: FontWeight.bold,

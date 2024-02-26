@@ -20,7 +20,7 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  signInWithGoogle() async {
+  signInWithGoogle(BuildContext context) async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
     try {
@@ -76,7 +76,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       text: 'Sign up with Google',
                       image: 'assets/images/gmail-icon.svg',
                       onTap: () {
-                        signInWithGoogle();
+                        signInWithGoogle(context);
                       },
                     ),
                     OnBoardListTileWidget(

@@ -1,6 +1,8 @@
 import 'package:breast_onco/constants/repository.dart';
 import 'package:breast_onco/themes/colors.dart';
+import 'package:breast_onco/utils/cache.dart';
 import 'package:breast_onco/widgets/profile_options.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -26,22 +28,47 @@ class AccountScreen extends StatelessWidget {
                     ),
               ),
               const SizedBox(height: 16.0),
-              // Statically display user name
-              Text(
-                'Muhammad Hannan',
-                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                      color: kSecondarySwatchColor,
+              StreamBuilder(
+                stream: Repository.databaseUser.onValue,
+                builder: (BuildContext context, AsyncSnapshot<DatabaseEvent> snapshot) {
+                  if (snapshot.hasData) {
+                    final data = snapshot.data?.snapshot.value as Map<dynamic, dynamic>;
+                    final dataListKeys = data.keys.toList();
 
-                ),
+                    for (int index = 0; index < dataListKeys.length; index++) {
+                      if (data[dataListKeys[index]]['email'].toString() == UserCacheData.userEmail || uncachedEmail == data[dataListKeys[index]]['email'].toString()) {
+                        return Text(
+                          '${data[dataListKeys[index]]['first_name']}${data[dataListKeys[index]]['last_name']}',
+                          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                color: kSecondarySwatchColor,
+                              ),
+                        );
+                      }
+                    }
+                  }
+                  return const Center(child: CircularProgressIndicator.adaptive());
+                },
               ),
-              const SizedBox(height: 8.0),
-              // Statically display user email
-              Text(
-                 'hannan@gmail.com',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: kSecondarySwatchColor,
-                      
-                ),
+              StreamBuilder(
+                stream: Repository.databaseUser.onValue,
+                builder: (BuildContext context, AsyncSnapshot<DatabaseEvent> snapshot) {
+                  if (snapshot.hasData) {
+                    final data = snapshot.data?.snapshot.value as Map<dynamic, dynamic>;
+                    final dataListKeys = data.keys.toList();
+
+                    for (int index = 0; index < dataListKeys.length; index++) {
+                      if (data[dataListKeys[index]]['email'].toString() == UserCacheData.userEmail || uncachedEmail == data[dataListKeys[index]]['email'].toString()) {
+                        return Text(
+                          '${data[dataListKeys[index]]['email']}',
+                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                color: kSecondarySwatchColor,
+                              ),
+                        );
+                      }
+                    }
+                  }
+                  return const Center(child: CircularProgressIndicator.adaptive());
+                },
               ),
               const SizedBox(height: 16.0),
               ProfileOptions(

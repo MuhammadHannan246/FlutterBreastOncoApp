@@ -12,6 +12,7 @@ String? uncachedEmail;
 class Repository {
   static final auth = FirebaseAuth.instance;
   static final databaseUser = FirebaseDatabase.instance.ref('user');
+  static final databasePatient = FirebaseDatabase.instance.ref('patient');
 
   userAuth({
     required BuildContext context,
@@ -204,6 +205,30 @@ class Repository {
       flutterToast('Account Updated Successfully').onError((error, stackTrace) {
         return flutterToast('Sorry An Error Occurred');
       });
+    });
+  }
+
+  static setPatientData({
+    required BuildContext context,
+    required String firstName,
+    required String lastName,
+    required String age,
+    required String phone,
+    required Map<int, int> answers,
+    required String imageUrl,
+  }) {
+    databasePatient.child('${DateTime.now().millisecondsSinceEpoch}').set({
+      'email': UserCacheData.userEmail,
+      'firstName': firstName,
+      'last_name': lastName,
+      'age': age,
+      'phone': phone,
+      'answers': answers,
+      'imageUrl': imageUrl,
+    }).then((value) {
+      flutterToast('Patient has been created');
+    }).onError((error, stackTrace) {
+      flutterToast('Sorry An Error Occurred');
     });
   }
 }

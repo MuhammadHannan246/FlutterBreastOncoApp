@@ -5,9 +5,7 @@ import 'package:breast_onco/screens/edit_patient_details_screen.dart';
 import 'package:breast_onco/screens/goals_screen.dart';
 import 'package:breast_onco/screens/onboard_review_order_two_screen.dart';
 import 'package:breast_onco/screens/otp_verification_screen.dart';
-import 'package:breast_onco/screens/question_and_answer_screen.dart';
 import 'package:breast_onco/screens/result_screen.dart';
-import 'package:breast_onco/screens/select_image_screen.dart';
 import 'package:breast_onco/screens/sign_in_screen.dart';
 import 'package:breast_onco/screens/sign_up_one_screen.dart';
 import 'package:breast_onco/screens/sign_up_screen.dart';
@@ -33,9 +31,7 @@ class PageRoutes {
       CoursesScreen.routeName: (context) => const CoursesScreen(),
       SupportScreen.routeName: (context) => const SupportScreen(),
       AccountScreen.routeName: (context) => const AccountScreen(),
-      QuestionAndAnswerScreen.routeName: (context) => const QuestionAndAnswerScreen(),
       EditPatientDetailsScreen.routeName: (context) => const EditPatientDetailsScreen(),
-      SelectImageScreen.routeName: (context) => const SelectImageScreen(),
       ResultScreen.routeName: (context) => const ResultScreen(),
     };
   }

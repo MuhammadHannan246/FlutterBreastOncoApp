@@ -107,6 +107,21 @@ class _ResultScreenState extends State<ResultScreen> {
                     ),
                   ),
                 ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  style: Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                        side: MaterialStateProperty.all(BorderSide(color: kSecondarySwatchColor)),
+                      ),
+                  child: Text(
+                    'Back',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: kSecondarySwatchColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
               ],
             ),
           ),

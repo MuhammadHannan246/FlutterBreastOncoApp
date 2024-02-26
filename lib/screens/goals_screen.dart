@@ -17,11 +17,13 @@ class GoalsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Patients Details',
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: kSecondarySwatchColor,
-                        fontWeight: FontWeight.bold,
-                      )),
+              Text(
+                'Patients Details',
+                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                      color: kSecondarySwatchColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
               const GoalListTile(icon: Icons.person, personName: 'Haleema'),
               const GoalListTile(icon: Icons.person, personName: 'Tania'),
               const GoalListTile(icon: Icons.person, personName: 'Mishaal'),
