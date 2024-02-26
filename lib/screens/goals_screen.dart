@@ -34,7 +34,6 @@ class GoalsScreen extends StatelessWidget {
               const GoalListTile(icon: Icons.person, personName: 'Gulfi'),
               const GoalListTile(icon: Icons.person, personName: 'Fatima'),
               const GoalListTile(icon: Icons.person, personName: 'Ayesha'),
-              // Add more GoalListTiles as needed
             ],
           ),
         ),

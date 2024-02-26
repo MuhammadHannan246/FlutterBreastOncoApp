@@ -81,16 +81,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Column(
+                const Column(
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        signInWithGoogle();
-                      },
-                      child: const Text('ads'),
-                    ),
-                    const OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
-                    const OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
+                    OnBoardListTileWidget(text: 'Sign up with Google', image: 'assets/images/gmail-icon.svg', routeName: SignUpOneScreen.routeName),
+                    OnBoardListTileWidget(text: 'Sign up with Email', image: 'assets/images/email-icon.svg', routeName: SignUpOneScreen.routeName),
                   ],
                 ),
                 const SignInSignUpPromptWidget(text1: 'Already have an account?', text2: 'Sign In', routeName: SignInScreen.routeName),
