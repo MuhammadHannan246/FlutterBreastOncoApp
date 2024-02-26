@@ -71,7 +71,7 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                   ],
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: questions.length,
                   itemBuilder: (context, index) {
