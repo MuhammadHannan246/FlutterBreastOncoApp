@@ -41,7 +41,7 @@ class _EditPatientDetailsScreenState extends State<EditPatientDetailsScreen> {
                         animationDuration: 2000,
                       ),
                     ),
-                    OnboardBookmarkWidget(text: 'Edit Patient Details'),
+                    OnboardBookmarkWidget(text: 'Edit Details'),
                   ],
                 ),
                 Padding(

@@ -1,3 +1,4 @@
+import 'package:breast_onco/screens/select_image_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.dart';
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
@@ -53,11 +54,12 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       QuestionWithRadioButtons(
-                        question: 'Question 1',
+                        question: 'Positive Family Hx for Breast CA',
                         answers: const [
-                          'Answer 1',
-                          'Answer 2',
-                          'Answer 3'
+                          'Strongly Agree',
+                          'Agree',
+                          'Strongly Disagree',
+                          'Disagree'
                         ],
                         selectedAnswerIndex: selectedAnswerIndex1,
                         onAnswerSelected: (index) {
@@ -67,11 +69,12 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                         },
                       ),
                       QuestionWithRadioButtons(
-                        question: 'Question 2',
+                         question: 'Have you ever undergone radiation therapyto the chest area?',
                         answers: const [
-                          'Answer 1',
-                          'Answer 2',
-                          'Answer 3'
+                          'Strongly Agree',
+                          'Agree',
+                          'Strongly Disagree',
+                          'Disagree'
                         ],
                         selectedAnswerIndex: selectedAnswerIndex2,
                         onAnswerSelected: (index) {
@@ -81,11 +84,12 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                         },
                       ),
                       QuestionWithRadioButtons(
-                        question: 'Question 3',
+                         question: 'Have you ever had abnormal breast biopsies or other breast conditions?',
                         answers: const [
-                          'Answer 1',
-                          'Answer 2',
-                          'Answer 3'
+                          'Strongly Agree',
+                          'Agree',
+                          'Strongly Disagree',
+                          'Disagree'
                         ],
                         selectedAnswerIndex: selectedAnswerIndex3,
                         onAnswerSelected: (index) {
@@ -95,11 +99,12 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                         },
                       ),
                       QuestionWithRadioButtons(
-                        question: 'Question 4',
+                        question: 'Do you have a family history of Breast Cancer in a first degree relative?',
                         answers: const [
-                          'Answer 1',
-                          'Answer 2',
-                          'Answer 3'
+                          'Strongly Agree',
+                          'Agree',
+                          'Strongly Disagree',
+                          'Disagree'
                         ],
                         selectedAnswerIndex: selectedAnswerIndex4,
                         onAnswerSelected: (index) {
@@ -109,11 +114,12 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                         },
                       ),
                       QuestionWithRadioButtons(
-                        question: 'Question 5',
+                       question: 'Have you ever been diagnosed with breast cancer?',
                         answers: const [
-                          'Answer 1',
-                          'Answer 2',
-                          'Answer 3'
+                          'Strongly Agree',
+                          'Agree',
+                          'Strongly Disagree',
+                          'Disagree'
                         ],
                         selectedAnswerIndex: selectedAnswerIndex5,
                         onAnswerSelected: (index) {
@@ -147,7 +153,7 @@ class _QuestionAndAnswerScreenState extends State<QuestionAndAnswerScreen> {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // Navigator.of(context).pushNamed(routeName);
+                                  Navigator.of(context).pushNamed(SelectImageScreen.routeName);
                                 },
                                 style: Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
