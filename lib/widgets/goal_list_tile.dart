@@ -6,7 +6,7 @@ class GoalListTile extends StatelessWidget {
   final IconData icon;
   final String personName;
 
-  const GoalListTile({required this.icon, required this.personName});
+  const GoalListTile({super.key, required this.icon, required this.personName});
 
   @override
   Widget build(BuildContext context) {
