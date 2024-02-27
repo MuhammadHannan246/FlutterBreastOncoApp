@@ -73,13 +73,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Column(
                   children: [
                     OnBoardListTileWidget(
-                      text: 'Sign up with Google',
-                      image: 'assets/images/gmail-icon.svg',
-                      onTap: () {
-                        signInWithGoogle(context);
-                      },
-                    ),
-                    OnBoardListTileWidget(
                       text: 'Sign up with Email',
                       image: 'assets/images/email-icon.svg',
                       onTap: () {
