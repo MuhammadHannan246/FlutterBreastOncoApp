@@ -81,7 +81,7 @@ class _ResultScreenState extends State<ResultScreen> {
                               child: SizedBox(
                                 width: MediaQuery.of(context).size.width - 32.0, // Adjust width
                                 child: Text(
-                                  'Patient might have ${diagnoseTumor(sStream[sStream.length - 1]['cnnPrediction'].toString())}. Please consult with a medical professional.',
+                                  'Patient might have ${diagnoseTumor(sStream[sStream.length - 1]['questionnairePrediction'].toString())}. Please consult with a medical professional.',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               ),

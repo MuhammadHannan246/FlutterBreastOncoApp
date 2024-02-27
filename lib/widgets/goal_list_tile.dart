@@ -34,25 +34,40 @@ class GoalListTile extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ListTile(
-            contentPadding: const EdgeInsets.all(16.0),
-            leading: Icon(
-              icon,
-              color: kSecondarySwatchColor,
-            ),
-            title: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16.0,
+          Dismissible(
+            key: UniqueKey(),
+            direction: DismissDirection.endToStart,
+            onDismissed: (direction) {
+              Repository.deletePatientData(context: context, id: id);
+            },
+            background: Container(
+              alignment: Alignment.centerRight,
+              color: Colors.red,
+              child: const Padding(
+                padding: EdgeInsets.only(right: 16.0),
+                child: Icon(
+                  Icons.delete,
+                  color: Colors.white,
+                ),
               ),
             ),
-            subtitle: Text(subtitle),
-            trailing: IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed: () {
-                Repository.deletePatientData(context: context, id: id);
-              },
-              color: kSecondarySwatchColor,
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(16.0),
+              leading: Icon(
+                icon,
+                color: kSecondarySwatchColor,
+              ),
+              title: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+              subtitle: Text(subtitle),
+              trailing: Icon(
+                Icons.drag_handle,
+                color: kSecondarySwatchColor,
+              ),
             ),
           ),
           Divider(height: 1.0, color: kTextColor),
