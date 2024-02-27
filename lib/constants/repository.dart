@@ -193,7 +193,9 @@ class Repository {
     required String cnnPrediction,
     required String questionnairePrediction,
   }) {
-    databasePatient.child('${DateTime.now().millisecondsSinceEpoch}').set({
+    String id = DateTime.now().millisecondsSinceEpoch.toString();
+    databasePatient.child(id).set({
+      'id': id,
       'email': UserCacheData.userEmail,
       'firstName': firstName,
       'last_name': lastName,
@@ -205,6 +207,17 @@ class Repository {
       'questionnairePrediction': questionnairePrediction,
     }).then((value) {
       flutterToast('Patient has been created');
+    }).onError((error, stackTrace) {
+      flutterToast('Sorry An Error Occurred');
+    });
+  }
+
+  static deletePatientData({
+    required BuildContext context,
+    required String id,
+  }) {
+    databasePatient.child(id).remove().then((value) {
+      flutterToast('Patient has been deleted');
     }).onError((error, stackTrace) {
       flutterToast('Sorry An Error Occurred');
     });

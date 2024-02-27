@@ -3,6 +3,7 @@ import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class PatientDetails extends StatelessWidget {
+  final String id;
   final String firstName;
   final String lastName;
   final String email;
@@ -10,8 +11,10 @@ class PatientDetails extends StatelessWidget {
   final String phone;
   final String imageUrl;
   final List<Object?> answers;
+  final String cnnPrediction;
+  final String questionnairePrediction;
 
-  const PatientDetails({Key? key, required this.firstName, required this.lastName, required this.email, required this.age, required this.phone, required this.imageUrl, required this.answers}) : super(key: key);
+  const PatientDetails({Key? key, required this.firstName, required this.lastName, required this.email, required this.age, required this.phone, required this.imageUrl, required this.answers, required this.cnnPrediction, required this.questionnairePrediction, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +53,7 @@ class PatientDetails extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  'Email: $email',
+                  'Dr. Email: $email',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: kTextColor,
                       ),
@@ -79,6 +82,20 @@ class PatientDetails extends StatelessWidget {
                 const SizedBox(height: 16.0),
                 Text(
                   'Phone: $phone',
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: kTextColor,
+                      ),
+                ),
+                const SizedBox(height: 16.0),
+                Text(
+                  'CNN Prediction: ${diagnoseTumor(cnnPrediction)}',
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: kTextColor,
+                      ),
+                ),
+                const SizedBox(height: 16.0),
+                Text(
+                  'Questionnaire Prediction: ${diagnoseTumor(questionnairePrediction)}',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: kTextColor,
                       ),

@@ -67,6 +67,7 @@ class GoalsScreen extends StatelessWidget {
                                               Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                   builder: (context) => PatientDetails(
+                                                    id: patient['id'],
                                                     firstName: patient['firstName'],
                                                     lastName: patient['last_name'],
                                                     email: patient['email'],
@@ -74,6 +75,8 @@ class GoalsScreen extends StatelessWidget {
                                                     phone: patient['phone'],
                                                     imageUrl: patient['imageUrl'],
                                                     answers: patient['answers'],
+                                                    cnnPrediction: patient['cnnPrediction'],
+                                                    questionnairePrediction: patient['questionnairePrediction'],
                                                   ),
                                                 ),
                                               );

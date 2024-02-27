@@ -4,6 +4,10 @@ import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.da
 import 'package:breast_onco/widgets/heading_widget.dart';
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:breast_onco/constants/repository.dart';
+import 'package:breast_onco/utils/cache.dart';
+import 'package:breast_onco/widgets/goal_list_tile.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({Key? key}) : super(key: key);
@@ -27,6 +31,33 @@ class _ResultScreenState extends State<ResultScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // StreamBuilder(
+                //   stream: Repository.databasePatient.onValue,
+                //   builder: (context, AsyncSnapshot<DatabaseEvent> snapshot) {
+                //     if (!snapshot.hasData) {
+                //       return const Center(child: CircularProgressIndicator.adaptive());
+                //     } else {
+                //       if (snapshot.data!.snapshot.value != null) {
+                //         Map<dynamic, dynamic> map = snapshot.data!.snapshot.value as dynamic;
+                //         List<dynamic> sStream = [];
+                //         sStream.clear();
+                //         sStream = map.values.where((item) => item['id'] == id).toList();
+
+                //         return Column(
+                //           children: [
+                //             ...sStream.map((patient) {
+                //               return GestureDetector(
+                //                 onTap: () {},
+                //                 child: GoalListTile(icon: Icons.person, title: "${patient['firstName']} ${patient['last_name']}", subtitle: "Age: ${patient['age']}"),
+                //               );
+                //             })
+                //           ],
+                //         );
+                //       }
+                //       return Container();
+                //     }
+                //   },
+                // ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
