@@ -1,12 +1,12 @@
-import 'package:breast_onco/screens/edit_patient_details_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class GoalListTile extends StatelessWidget {
   final IconData icon;
-  final String personName;
+  final String title;
+  final String subtitle;
 
-  const GoalListTile({super.key, required this.icon, required this.personName});
+  const GoalListTile({super.key, required this.icon, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +39,19 @@ class GoalListTile extends StatelessWidget {
               color: kSecondarySwatchColor,
             ),
             title: Text(
-              personName,
+              title,
               style: const TextStyle(
                 fontSize: 16.0,
               ),
             ),
-            trailing: IconButton(
-              icon: const Icon(Icons.edit),
-              onPressed: () {
-                Navigator.of(context).pushNamed(EditPatientDetailsScreen.routeName);
-                // Handle edit button press
-              },
-              color: kSecondarySwatchColor,
-            ),
+            subtitle: Text(subtitle),
+            // trailing: IconButton(
+            //   icon: const Icon(Icons.edit),
+            //   onPressed: () {
+            //     Navigator.of(context).pushNamed(EditPatientDetailsScreen.routeName);
+            //   },
+            //   color: kSecondarySwatchColor,
+            // ),
           ),
           Divider(height: 1.0, color: kTextColor),
         ],

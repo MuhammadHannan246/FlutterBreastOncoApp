@@ -3,6 +3,8 @@ import 'package:breast_onco/screens/sign_up_four_screen.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:breast_onco/widgets/sign_in_sign_up_prompt_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpThreeScreen extends StatefulWidget {
   final String email;
@@ -48,6 +50,16 @@ class _SignUpThreeScreenState extends State<SignUpThreeScreen> {
                         child: TextFormField(
                           controller: phoneController,
                           keyboardType: TextInputType.number,
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                            MaskTextInputFormatter(
+                              mask: '####-#######',
+                              filter: {
+                                "#": RegExp(r'[0-9]')
+                              },
+                              type: MaskAutoCompletionType.eager,
+                            ),
+                          ],
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: kTextColor, width: 1.0),

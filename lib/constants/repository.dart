@@ -60,7 +60,7 @@ class Repository {
 
   void login(BuildContext context, String inputEmail, String inputPassword) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    Repository.auth.signInWithEmailAndPassword(email: inputEmail.toLowerCase(), password: inputPassword.toLowerCase()).then((value) {
+    Repository.auth.signInWithEmailAndPassword(email: inputEmail.toLowerCase(), password: inputPassword).then((value) {
       pref.setString('email', inputEmail);
       UserCacheData.getCacheData();
       Repository.databaseUser.onValue.listen((event) {
@@ -153,32 +153,6 @@ class Repository {
         (route) => false,
       );
       flutterToast('Account Created Successfully').onError((error, stackTrace) {
-        return flutterToast('Sorry An Error Occurred');
-      });
-    });
-  }
-
-  static updateUserData({
-    required BuildContext context,
-    required String firstName,
-    required String lastName,
-    required List<String> interests,
-    required String imageUrl,
-    required String countryCode,
-    required String phone,
-    required String countryISOCode,
-  }) {
-    databaseUser.child('${UserCacheData.userId}').set({
-      'email': UserCacheData.userEmail,
-      'first_name': firstName,
-      'last_name': lastName,
-      'interests': interests,
-      'imageUrl': imageUrl,
-      'countryCode': countryCode,
-      'phone': phone,
-      'countryISOCode': countryISOCode,
-    }).then((value) {
-      flutterToast('Account Updated Successfully').onError((error, stackTrace) {
         return flutterToast('Sorry An Error Occurred');
       });
     });

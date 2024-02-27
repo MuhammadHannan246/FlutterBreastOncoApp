@@ -151,11 +151,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                     showSpinner = true;
                                   });
                                   apis.login(context, emailController.text, passwordController.text);
+                                  setState(() {
+                                    showSpinner = false;
+                                  });
                                 }
                               } catch (e) {
-                                setState(() {
-                                  showSpinner = false;
-                                });
                                 flutterToast(e.toString());
                               }
                             },

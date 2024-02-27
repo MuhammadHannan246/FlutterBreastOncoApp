@@ -11,7 +11,6 @@ import 'package:breast_onco/screens/sign_up_one_screen.dart';
 import 'package:breast_onco/screens/sign_up_screen.dart';
 import 'package:breast_onco/screens/sign_up_verify_password_screen.dart';
 import 'package:breast_onco/screens/splash_screen.dart';
-import 'package:breast_onco/screens/support_screen.dart';
 import 'package:breast_onco/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +28,6 @@ class PageRoutes {
       HomeScreen.routeName: (context) => const HomeScreen(),
       GoalsScreen.routeName: (context) => const GoalsScreen(),
       CoursesScreen.routeName: (context) => const CoursesScreen(),
-      SupportScreen.routeName: (context) => const SupportScreen(),
       AccountScreen.routeName: (context) => const AccountScreen(),
       EditPatientDetailsScreen.routeName: (context) => const EditPatientDetailsScreen(),
       ResultScreen.routeName: (context) => const ResultScreen(),

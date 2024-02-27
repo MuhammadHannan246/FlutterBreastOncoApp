@@ -135,7 +135,7 @@ class _SignUpFourScreenState extends State<SignUpFourScreen> {
                                           backgroundColor: MaterialStateProperty.all(kSecondarySwatchColor),
                                         ),
                                     child: Text(
-                                      'Nexta',
+                                      'Next',
                                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                             color: kLightColor,
                                             fontWeight: FontWeight.bold,
