@@ -88,55 +88,39 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Password is wrong!';
-                                } else {
-                                  return null;
-                                }
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Password is wrong!';
+                            } else {
+                              return null;
+                            }
+                          },
+                          controller: passwordController,
+                          keyboardType: TextInputType.visiblePassword,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: kTextColor, width: 1.0),
+                            ),
+                            labelText: 'Enter password',
+                            floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
+                            hintStyle: TextStyle(color: kTextColor),
+                            labelStyle: TextStyle(color: kTextColor),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
+                            ),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  passwordObscure = !passwordObscure;
+                                });
                               },
-                              controller: passwordController,
-                              keyboardType: TextInputType.visiblePassword,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: kTextColor, width: 1.0),
-                                ),
-                                labelText: 'Enter password',
-                                floatingLabelStyle: TextStyle(color: kSecondarySwatchColor),
-                                hintStyle: TextStyle(color: kTextColor),
-                                labelStyle: TextStyle(color: kTextColor),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 2, color: kSecondarySwatchColor),
-                                ),
-                                suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      passwordObscure = !passwordObscure;
-                                    });
-                                  },
-                                  icon: Icon(passwordObscure ? Icons.visibility_off : Icons.visibility, color: kSecondarySwatchColor),
-                                ),
-                              ),
-                              obscureText: passwordObscure,
-                              enableSuggestions: false,
-                              autocorrect: false,
+                              icon: Icon(passwordObscure ? Icons.visibility_off : Icons.visibility, color: kSecondarySwatchColor),
                             ),
-                            MaterialButton(
-                              onPressed: () {},
-                              visualDensity: VisualDensity.compact,
-                              child: Text(
-                                'FORGOT PASSWORD?',
-                                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: kSecondarySwatchColor,
-                                    ),
-                              ),
-                            ),
-                          ],
+                          ),
+                          obscureText: passwordObscure,
+                          enableSuggestions: false,
+                          autocorrect: false,
                         ),
                       ),
                       Padding(
