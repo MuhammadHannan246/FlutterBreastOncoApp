@@ -1,3 +1,4 @@
+import 'package:breast_onco/constants/repository.dart';
 import 'package:breast_onco/themes/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -5,8 +6,9 @@ class GoalListTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final String id;
 
-  const GoalListTile({super.key, required this.icon, required this.title, required this.subtitle});
+  const GoalListTile({super.key, required this.icon, required this.title, required this.subtitle, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +47,13 @@ class GoalListTile extends StatelessWidget {
               ),
             ),
             subtitle: Text(subtitle),
-            // trailing: IconButton(
-            //   icon: const Icon(Icons.edit),
-            //   onPressed: () {
-            //     Navigator.of(context).pushNamed(EditPatientDetailsScreen.routeName);
-            //   },
-            //   color: kSecondarySwatchColor,
-            // ),
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () {
+                Repository.deletePatientData(context: context, id: id);
+              },
+              color: kSecondarySwatchColor,
+            ),
           ),
           Divider(height: 1.0, color: kTextColor),
         ],

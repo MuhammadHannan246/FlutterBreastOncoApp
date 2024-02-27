@@ -81,7 +81,7 @@ class GoalsScreen extends StatelessWidget {
                                                 ),
                                               );
                                             },
-                                            child: GoalListTile(icon: Icons.person, title: "${patient['firstName']} ${patient['last_name']}", subtitle: "Age: ${patient['age']}"),
+                                            child: GoalListTile(icon: Icons.person, title: "${patient['firstName']} ${patient['last_name']}", subtitle: "Age: ${patient['age']}", id: patient['id']),
                                           );
                                         })
                                       ],
