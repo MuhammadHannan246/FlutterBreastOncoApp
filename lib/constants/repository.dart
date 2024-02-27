@@ -190,6 +190,8 @@ class Repository {
     required String phone,
     required Map<int, int> answers,
     required String imageUrl,
+    required String cnnPrediction,
+    required String questionnairePrediction,
   }) {
     databasePatient.child('${DateTime.now().millisecondsSinceEpoch}').set({
       'email': UserCacheData.userEmail,
@@ -199,6 +201,8 @@ class Repository {
       'phone': phone,
       'answers': answers,
       'imageUrl': imageUrl,
+      'cnnPrediction': cnnPrediction,
+      'questionnairePrediction': questionnairePrediction,
     }).then((value) {
       flutterToast('Patient has been created');
     }).onError((error, stackTrace) {

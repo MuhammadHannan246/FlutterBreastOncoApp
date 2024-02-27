@@ -1,4 +1,7 @@
 import 'dart:io';
+import 'package:breast_onco/constants/api.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import 'package:breast_onco/constants/component.dart';
 import 'package:breast_onco/constants/repository.dart';
@@ -8,7 +11,6 @@ import 'package:breast_onco/widgets/circular_progress_indicator_rabbit_widget.da
 import 'package:breast_onco/widgets/onboard_bookmark_widget.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -34,7 +36,14 @@ class _SelectImageScreenState extends State<SelectImageScreen> {
     return image != null;
   }
 
-  void clear() {}
+  int fetchData(path) {
+    final response = Api().baseApi + image.toString();
+    if (kDebugMode) {
+      print(response);
+    }
+
+    return modelClassifier();
+  }
 
   Future getImageGallery() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -148,6 +157,8 @@ class _SelectImageScreenState extends State<SelectImageScreen> {
                           child: ElevatedButton(
                             onPressed: checkIsEmpty()
                                 ? () async {
+                                    int cnnPrediction = fetchData(image.toString());
+                                    int questionnairePrediction = fetchData(image.toString());
                                     if (image != null) {
                                       setState(() {
                                         showSpinner = true;
@@ -168,6 +179,8 @@ class _SelectImageScreenState extends State<SelectImageScreen> {
                                           phone: widget.phone,
                                           answers: widget.answers,
                                           imageUrl: imageUrl,
+                                          cnnPrediction: cnnPrediction.toString(),
+                                          questionnairePrediction: questionnairePrediction.toString(),
                                         );
                                         Navigator.of(context).pushNamed(ResultScreen.routeName).then((value) => setState(() {
                                               showSpinner = false;
